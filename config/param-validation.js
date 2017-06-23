@@ -8,7 +8,19 @@ export default {
       mobileNumber: Joi.string().regex(/^[1-9][0-9]{9}$/).required()
     }
   },
-
+  // POST /api/todos
+  createTodo: {
+    body: {
+      text: Joi.string().required()
+    }
+  },
+  // UPDATE /api/todos
+  updateTodo: {
+    body: {
+      text: Joi.string(),
+      completed: Joi.boolean()
+    }
+  },
   // UPDATE /api/users/:userId
   updateUser: {
     body: {
